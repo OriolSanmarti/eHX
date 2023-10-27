@@ -22,8 +22,14 @@ boundaryField
 {
     BCWALL_3
     {
-        type            fixedValue;
-        value           uniform 453;
+        //type            fixedValue;
+        //value           uniform 453;
+        type            externalWallHeatFluxTemperature;
+        mode            flux; //HTC
+        q               constant 30000; // W/m2
+        kappaMethod     fluidThermo;
+        value           $internalField;
+
     }
 
     ".*"

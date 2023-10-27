@@ -20,6 +20,20 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
+    BCWALL_1
+    {
+        type            flowRateInletVelocity;
+        massFlowRate    constant 0.03; // kg/s
+       //type             pressureInletOutletVelocity;
+       //value            uniform ( -0.01 0 0 );
+    }
+    BCWALL_2
+    {
+        type            flowRateOutletVelocity;
+        massFlowRate    constant 0.03; // kg/s
+       //type             pressureInletOutletVelocity;
+       //value            uniform ( 0.01 0 0 );
+    }
     ".*"
     {
         type            noSlip;

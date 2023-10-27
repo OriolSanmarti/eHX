@@ -20,6 +20,19 @@ internalField   uniform 1e5;
 
 boundaryField
 {
+    BCWALL_1
+    {
+       type             totalPressure;
+       p0               $internalField;
+    }
+
+    BCWALL_2
+    {
+       type             totalPressure;
+       p0               $internalField;
+        //type        fixedValue;
+        //value       $internalField;
+    }
     ".*"
     {
         type            fixedFluxPressure;
