@@ -1,0 +1,42 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+
+pointSync false;
+
+patches
+(
+    {
+        name BCWALL_1;  // Name of new patch to be created 
+        patchInfo
+        {
+            type patch;     // is it a patch or wall? polyMesh/boundary file will be updated accordingly. 
+        }
+        constructFrom set;    
+        set myFaces1;            // name of the set created in topoSet 
+    }
+
+    {
+        name BCWALL_2;  // Name of new patch to be created 
+        patchInfo
+        {
+            type patch;     // is it a patch or wall? polyMesh/boundary file will be updated accordingly. 
+        }
+        constructFrom set;    
+        set myFaces2;            // name of the set created in topoSet 
+    }
+
+    {
+        name BCWALL_3;  // Name of new patch to be created 
+        patchInfo
+        {
+            type patch;     // is it a patch or wall? polyMesh/boundary file will be updated accordingly. 
+        }
+        constructFrom set;    
+        set myFaces3;            // name of the set created in topoSet 
+    }
+);
